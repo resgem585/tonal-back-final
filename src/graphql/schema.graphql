@@ -1,0 +1,36 @@
+type Query {
+  #Get
+ 
+  getUser:[User]
+  getJuegos:[Juego]
+
+ 
+ 
+
+  login(email:String, password:String): User
+}
+
+type Mutation {
+  #Create 
+  createUser(email:String, password:String): [User]
+  createJuego(title:String,description:String,image:String): Juego
+  #Update
+  updateJuego(_id: ID,title:String,description:String,image:String): Juego
+  updateUser(_id: ID, email:String, password:String): User
+  #Delete
+  deleteUser(_id: ID): User
+  deleteJuego(_id: ID): Juego
+}
+
+type User {
+  _id: ID
+  email:String
+  password:String
+}
+
+type Juego {
+    _id: ID
+    title: String
+    description:String
+    image:String
+}
