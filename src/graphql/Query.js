@@ -1,6 +1,6 @@
 import Juego from "../models/Juego.js"
 import User from "../models/User.js"
-
+import Temaz from "../models/Temaz.js"
 
 const Query = {
 
@@ -20,6 +20,12 @@ const Query = {
         const Juegos = await Juego.find();
         return Juegos
     },
+    // Temazcal
+    async getJuegos() {
+        const Temaz = await Temaz.find();
+        return Temaz
+    },
+    
 }
 
 export default Query

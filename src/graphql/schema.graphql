@@ -3,6 +3,7 @@ type Query {
  
   getUser:[User]
   getJuegos:[Juego]
+  getTemaz:[Temaz]
 
  
  
@@ -14,12 +15,16 @@ type Mutation {
   #Create 
   createUser(email:String, password:String): [User]
   createJuego(title:String,description:String,image:String): Juego
+  createTemaz(title:String,description:String,image:String): Temaz
   #Update
   updateJuego(_id: ID,title:String,description:String,image:String): Juego
   updateUser(_id: ID, email:String, password:String): User
+  updateTemaz(_id: ID, email:String, password:String): Temaz
+  
   #Delete
   deleteUser(_id: ID): User
   deleteJuego(_id: ID): Juego
+  deleteTemaz(_id: ID): Temaz
 }
 
 type User {
@@ -29,6 +34,13 @@ type User {
 }
 
 type Juego {
+    _id: ID
+    title: String
+    description:String
+    image:String
+}
+
+type Temaz {
     _id: ID
     title: String
     description:String

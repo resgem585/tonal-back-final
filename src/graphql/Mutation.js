@@ -1,5 +1,6 @@
 import Juego from "../models/Juego.js";
 import User from "../models/User.js"
+import Temaz from "../models/Temaz.js";
 
 const Mutation = {
     
@@ -18,10 +19,21 @@ const Mutation = {
         return await Juego.find();
     
     },  
-
     // Temazcal
-
-
+    async createTemaz( _ , { title,description, image} ) {
+        const newTemaz = { title, description, image };
+        const temaz = await Temaz.create( newTemaz ); //returns { }
+        return await Juego.find()
+    },
+    async updateTemaz( _, { _id, title, description,  image } ) {
+        const temaz = { title, description,  image }
+        return await Temaz.findByIdAndUpdate(_id, temaz,  {new: true})
+    },
+    async deleteTemaz(_, {_id}){
+        await Temaz.findByIdAndDelete( _id );
+        return await Temaz.find();
+    
+    },  
 
     // Nahuatl
 
