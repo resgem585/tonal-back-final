@@ -23,7 +23,7 @@ const Mutation = {
     async createTemaz( _ , { title,description, image} ) {
         const newTemaz = { title, description, image };
         const temaz = await Temaz.create( newTemaz ); //returns { }
-        return await Juego.find()
+        return await Temaz.find()
     },
     async updateTemaz( _, { _id, title, description,  image } ) {
         const temaz = { title, description,  image }

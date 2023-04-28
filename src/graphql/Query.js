@@ -21,9 +21,9 @@ const Query = {
         return Juegos
     },
     // Temazcal
-    async getJuegos() {
-        const Temaz = await Temaz.find();
-        return Temaz
+    async getTemaz() {
+        const temaz = await Temaz.find();
+        return temaz
     },
     
 }
