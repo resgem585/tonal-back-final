@@ -26,6 +26,7 @@ const Query = {
         return temaz
     },
     
+    
 }
 
 export default Query
