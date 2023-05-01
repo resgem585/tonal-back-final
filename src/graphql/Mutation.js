@@ -1,7 +1,7 @@
 import Juego from "../models/Juego.js";
 import User from "../models/User.js"
 import Temaz from "../models/Temaz.js";
-
+import Tonal from "../models/Tonal.js"
 const Mutation = {
     
     // Juegos
@@ -35,7 +35,21 @@ const Mutation = {
     
     },  
 
-    // Nahuatl
+    // Tonal
+    async createTonal( _ , { title, significado, description, acompaniante, oficios, image} ) {
+        const newTonal = { title, significado, description, acompaniante, oficios, image };
+        const tonal = await Tonal.create( newTonal ); //returns { }
+        return await Tonal.find()
+    },
+    async updateTonal( _, { _id, title, significado, description, acompaniante, oficios, image } ) {
+        const tonal = { title, significado, description, acompaniante, oficios, image }
+        return await Tonal.findByIdAndUpdate(_id, tonal,  {new: true})
+    },
+    async deleteTonal(_, {_id}){
+        await Tonal.findByIdAndDelete( _id );
+        return await Tonal.find();
+    
+    },  
 
     // USER
     async createUser(_, {email, password }){

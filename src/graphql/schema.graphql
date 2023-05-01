@@ -17,12 +17,12 @@ type Mutation {
   createUser(email:String, password:String): [User]
   createJuego(title:String,description:String,image:String): Juego
   createTemaz(title:String,description:String,image:String): Temaz
-  crateTonal(title:String, signficado:String, descripcion:String, acompaniante:String, oficios:String, image:String)
+  crateTonal(title:String, significado:String, description:String, acompaniante:String, oficios:String, image:String)
   #Update
-  updateUser(_id: ID, email:String, password:String): User
+  updateUser(_id: ID, email:String, password:String): [User]
   updateJuego(_id: ID,title:String,description:String,image:String): Juego
   updateTemaz(_id: ID,title:String,description:String,image:String): Temaz
-  updateTonal(_id: ID, title:String, signficado:String, descripcion:String, acompaniante:String, oficios:String, image:String): Tonal
+  updateTonal(_id: ID, title:String, significado:String, description:String, acompaniante:String, oficios:String, image:String): Tonal
   #Delete
   deleteUser(_id: ID): User
   deleteJuego(_id: ID): Juego
@@ -53,8 +53,9 @@ type Temaz {
 type Tonal {
    _id: ID
     title: String
+    significado: String
     description:String
     acompaniante:String
-    oficios
+    oficios: String
     image:String
 }

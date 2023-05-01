@@ -1,8 +1,9 @@
 import Juego from "../models/Juego.js"
 import User from "../models/User.js"
 import Temaz from "../models/Temaz.js"
+import Tonal from "../models/Tonal.js"
 
-const Query = {
+export const Query = {
 
     async getUser() {
         const users = await User.find()
@@ -25,8 +26,10 @@ const Query = {
         const temaz = await Temaz.find();
         return temaz
     },
-    
-    
+    async getTonal() {
+        const tonal = await Tonal.find();
+        return tonal
+    }
 }
 
 export default Query
