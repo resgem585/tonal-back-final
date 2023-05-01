@@ -6,9 +6,6 @@ type Query {
   getTemaz:[Temaz]
   getTonal:[Tonal]
 
- 
- 
-
   login(email:String, password:String): User
 }
 
@@ -17,9 +14,9 @@ type Mutation {
   createUser(email:String, password:String): [User]
   createJuego(title:String,description:String,image:String): Juego
   createTemaz(title:String,description:String,image:String): Temaz
-  crateTonal(title:String, significado:String, description:String, acompaniante:String, oficios:String, image:String)
+  createTonal(title:String, significado:String, description:String, acompaniante:String, oficios:String, image:String): Tonal
   #Update
-  updateUser(_id: ID, email:String, password:String): [User]
+  updateUser(_id: ID, email:String, password:String): User
   updateJuego(_id: ID,title:String,description:String,image:String): Juego
   updateTemaz(_id: ID,title:String,description:String,image:String): Temaz
   updateTonal(_id: ID, title:String, significado:String, description:String, acompaniante:String, oficios:String, image:String): Tonal
@@ -51,7 +48,7 @@ type Temaz {
 }
 
 type Tonal {
-   _id: ID
+    _id: ID
     title: String
     significado: String
     description:String

@@ -15,4 +15,4 @@ const temazSchema = new Schema({
     }
 })
 
-export default model('temazcal_catalog', temazSchema)
+export default model('temazcal', temazSchema)

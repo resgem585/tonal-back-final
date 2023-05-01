@@ -26,7 +26,7 @@ const Mutation = {
         return await Temaz.find()
     },
     async updateTemaz( _, { _id, title, description,  image } ) {
-        const temaz = { title, description,  image }
+        const temaz = { title, description, image }
         return await Temaz.findByIdAndUpdate(_id, temaz,  {new: true})
     },
     async deleteTemaz(_, {_id}){
@@ -68,8 +68,7 @@ const Mutation = {
         }
         return user
 
-
-    },
+    }
 }
 
 export default Mutation;

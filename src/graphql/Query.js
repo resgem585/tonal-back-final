@@ -3,7 +3,7 @@ import User from "../models/User.js"
 import Temaz from "../models/Temaz.js"
 import Tonal from "../models/Tonal.js"
 
-export const Query = {
+ const Query = {
 
     async getUser() {
         const users = await User.find()
