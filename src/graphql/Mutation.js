@@ -36,13 +36,13 @@ const Mutation = {
     },  
 
     // Tonal
-    async createTonal( _ , { title, significado, description, acompaniante, oficios, image} ) {
-        const newTonal = { title, significado, description, acompaniante, oficios, image };
+    async createTonal( _ , { title, significado, description,  image} ) {
+        const newTonal = { title, significado, description, image };
         const tonal = await Tonal.create( newTonal ); //returns { }
         return await Tonal.find()
     },
-    async updateTonal( _, { _id, title, significado, description, acompaniante, oficios, image } ) {
-        const tonal = { title, significado, description, acompaniante, oficios, image }
+    async updateTonal( _, { _id, title, significado, description,  image } ) {
+        const tonal = { title, significado, description,  image }
         return await Tonal.findByIdAndUpdate(_id, tonal,  {new: true})
     },
     async deleteTonal(_, {_id}){

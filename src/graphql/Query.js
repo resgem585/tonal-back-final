@@ -26,6 +26,7 @@ import Tonal from "../models/Tonal.js"
         const temaz = await Temaz.find();
         return temaz
     },
+    // Tonal
     async getTonal() {
         const tonal = await Tonal.find();
         return tonal

@@ -13,14 +13,6 @@ const tonalSchema = new Schema({
         type: String, 
         require: true
     },
-    acompaniante: {
-        type: String,
-        require: true
-    },
-    oficios: {
-        type: String,
-        requiere: true
-    },
     image: {
         type: String,
         requiere: true
