@@ -5,6 +5,7 @@ type Query {
   getJuegos:[Juego]
   getTemaz:[Temaz]
   getTonal:[Tonal]
+  getSigno:[Signo]
 
   login(email:String, password:String): User
 }
@@ -15,16 +16,19 @@ type Mutation {
   createJuego(title:String,description:String,image:String): Juego
   createTemaz(title:String,description:String,image:String): Temaz
   createTonal(title:String, significado:String, description:String, image:String): Tonal
+  createSigno(title:String, description:String, image:String): Signo
   #Update
   updateUser(_id: ID, email:String, password:String): User
   updateJuego(_id: ID,title:String,description:String,image:String): Juego
   updateTemaz(_id: ID,title:String,description:String,image:String): Temaz
   updateTonal(_id: ID, title:String, significado:String, description:String, image:String): Tonal
+  updateSigno(_id: ID, significado:String, description:String, image:): Signo
   #Delete
   deleteUser(_id: ID): User
   deleteJuego(_id: ID): Juego
   deleteTemaz(_id: ID): Temaz
   deleteTonal(_id: ID): Tonal
+  deleteSigno(_id: ID): Signo
 }
 
 type User {
@@ -53,4 +57,11 @@ type Tonal {
     significado: String
     description:String
     image:String
+}
+
+type Signo {
+  _id: ID
+  title: String
+  description:String
+  image:String
 }

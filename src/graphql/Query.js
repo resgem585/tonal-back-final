@@ -30,6 +30,13 @@ import Tonal from "../models/Tonal.js"
     async getTonal() {
         const tonal = await Tonal.find();
         return tonal
+    },
+
+    // Signo
+
+    async getSigno() {
+        const signo = await Signo.find();
+        return signo
     }
 }
 

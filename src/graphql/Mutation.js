@@ -51,6 +51,23 @@ const Mutation = {
     
     },  
 
+    // Signo
+    async createSigno( _ , { title, significado, description, image} ) {
+        const newSigno = { title, significado, description, image };
+        const signo = await Signo.create( newSigno ); //returns { }
+        return await Signo.find()
+    },
+    async updateSigno( _, { _id, title, significado, description, image } ) {
+        const signo = { title, significado, description,  image }
+        return await Signo.findByIdAndUpdate(_id, signo,  {new: true})
+    },
+    async deleteSigno(_, {_id}){
+        await Signo.findByIdAndDelete( _id );
+        return await Signo.find();
+    
+    },  
+
+
     // USER
     async createUser(_, {email, password }){
         const newUser = { email, password}
