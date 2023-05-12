@@ -22,7 +22,7 @@ type Mutation {
   updateJuego(_id: ID,title:String,description:String,image:String): Juego
   updateTemaz(_id: ID,title:String,description:String,image:String): Temaz
   updateTonal(_id: ID, title:String, significado:String, description:String, image:String): Tonal
-  updateSigno(_id: ID, significado:String, description:String, image:): Signo
+  updateSigno(_id: ID, title:String, description:String, image:String): Signo
   #Delete
   deleteUser(_id: ID): User
   deleteJuego(_id: ID): Juego

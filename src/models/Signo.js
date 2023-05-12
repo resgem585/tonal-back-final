@@ -15,4 +15,4 @@ const signoSchema = new Schema({
     }
 })
 
-export default model('signo', tonalSchema)
+export default model('signo', signoSchema)
