@@ -49,7 +49,10 @@ const Mutation = {
         await Tonal.findByIdAndDelete( _id );
         return await Tonal.find();
     
-    },  
+    }, 
+
+    // Nahuatl
+    
 
     // USER
     async createUser(_, {email, password }){
