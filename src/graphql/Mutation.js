@@ -2,12 +2,14 @@ import Juego from "../models/Juego.js";
 import User from "../models/User.js"
 import Temaz from "../models/Temaz.js";
 import Tonal from "../models/Tonal.js"
+import Signo from "../models/Signo.js";
+
 const Mutation = {
     
     // Juegos
     async createJuego( _ , { title,description, image} ) {
         const newJuego = { title, description, image };
-        const movie = await Juego.create( newJuego ); //returns { }
+        const juego = await Juego.create( newJuego ); //returns { }
         return await Juego.find()
     },
     async updateJuego( _, { _id, title, description,  image } ) {
@@ -53,6 +55,23 @@ const Mutation = {
 
     // Nahuatl
     
+
+    // Signo
+    async createSigno( _ , { title,  description, image} ) {
+        const newSigno = { title,  description, image };
+        const signo = await Signo.create( newSigno ); //returns { }
+        return await Signo.find()
+    },
+    async updateSigno( _, { _id, title, description, image } ) {
+        const signo = { title,  description,  image }
+        return await Signo.findByIdAndUpdate(_id, signo,  {new: true})
+    },
+    async deleteSigno(_, {_id}){
+        await Signo.findByIdAndDelete( _id );
+        return await Signo.find();
+    
+    },  
+
 
     // USER
     async createUser(_, {email, password }){

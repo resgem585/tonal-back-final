@@ -2,6 +2,7 @@ import Juego from "../models/Juego.js"
 import User from "../models/User.js"
 import Temaz from "../models/Temaz.js"
 import Tonal from "../models/Tonal.js"
+import Signo from "../models/Signo.js"
 
  const Query = {
 
@@ -30,6 +31,13 @@ import Tonal from "../models/Tonal.js"
     async getTonal() {
         const tonal = await Tonal.find();
         return tonal
+    },
+
+    // Signo
+
+    async getSigno() {
+        const signo = await Signo.find();
+        return signo
     }
 }
 
