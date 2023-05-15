@@ -15,4 +15,4 @@ const signoSchema = new Schema({
     }
 })
 
-export default model('signo', signoSchema)
+export default model('curiosidades', signoSchema)
