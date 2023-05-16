@@ -1,4 +1,13 @@
-import server from "./server.js"
+import './database.js'
+import server from './server.js'
+
+server.start({ port: 3000 }, ({ port }) => {
+  console.log(`Server is running on PORT ${port}`)
+})
+
+
+
+/* import server from "./server.js"
 //------conexion hacia mongo local
 import { connect } from "./database.js";
 connect();
@@ -12,3 +21,4 @@ server.start( { port: 3000 }, ( { port } ) => {
     console.log('Sever is running on' + port )
 })
 
+ */

@@ -1,4 +1,18 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
+
+mongoose.connect(process.env.URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then((db) => {
+  return console.log('DB is connected!')
+}).catch((err) => console.log(err))
+
+
+
+/* import mongoose from "mongoose"
 
 ///------ conectar mongodb localmente ----------- //
 export async function connect() {
@@ -12,7 +26,7 @@ export async function connect() {
         return console.log('Something went wrong!!', error)
     }
   
-}
+} */
 ///------ conectar mongodb localmente ----------- //
 
 
